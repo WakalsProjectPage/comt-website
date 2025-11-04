@@ -24,9 +24,9 @@
           <a href="#hero" data-ease>Teaser</a>
           <a href="#abstract" data-ease>Abstract</a>
           <a href="#method" data-ease>Method</a>
-          <a href="#experiments" data-ease>Experiments</a>
           <a href="#gallery-single" data-ease>Gallery · Single</a>
           <a href="#gallery-compare" data-ease>Gallery · Compare</a>
+          <a href="#experiment-results" data-ease>Experiment Results</a>
           <a href="#video" data-ease>Video</a>
         </nav>
       </div>
@@ -76,30 +76,33 @@
       <!-- Method -->
       <section id="method" class="section container reveal">
         <h2>Method</h2>
+        <p>
+          CoMT generates visual anchor tokens and then leverages these latents to condition next token prediction and reason the final answer. 
+          This is achieved by aligning the anchor tokens with "expert" model features on their corresponding tasks during training. 
+          Four kinds of anchor tasks are introduced.
+        </p>
         <div class="card-grid">
           <div class="card glass">
-            <h3>模块化设计</h3>
-            <p>以插拔式编码器/适配器构建跨模态路径，支持按任务装配。</p>
+            <h3>SAM</h3>
+            <p>SAM is for segmentation task and provides instance locations and shapes information of VLMs.</p>
           </div>
           <div class="card glass">
-            <h3>对齐与路由</h3>
-            <p>通过可学习的门控与对齐损失，在不同模态间高效路由信息。</p>
+            <h3>DepthAnything</h3>
+            <p>DepthAnything is for the depth estimation task and provides 3D perception in real-world problems.</p>
           </div>
           <div class="card glass">
-            <h3>高效训练</h3>
-            <p>采用混合精度与分层冻结，减少训练开销并提升稳定性。</p>
+            <h3>PIDINet</h3>
+            <p>PIDINet is employed to extract the edge information of an image, thereby providing cues about the spatial locations of certain objects.</p>
+          </div>
+          <div class="card glass">
+            <h3>DINO</h3>
+            <p>DINO is a visual representation model for extracting image features and provides feature perception for VLMs.</p>
           </div>
         </div>
       </section>
 
-      <!-- Experiments -->
-      <section id="experiments" class="section container reveal">
-        <h2>Experiments</h2>
-        <p>在多模态理解、检索与编辑等任务上验证方法有效性。下方给出可视化模板。</p>
-      </section>
-
       <!-- 单图画廊模板 -->
-      <section id="gallery-single" class="section container reveal">
+      <!-- <section id="gallery-single" class="section container reveal">
         <div class="section-head">
           <h2>Gallery · Single</h2>
           <p>左右箭头切换，点击图片展示对应 caption，底部进度条反映位置。</p>
@@ -108,17 +111,16 @@
           <button class="nav prev" data-prev aria-label="上一张">‹</button>
           <div class="viewport">
             <div class="track" id="carouselTrack">
-              <!-- slides 由 JS 注入占位图 -->
             </div>
           </div>
           <button class="nav next" data-next aria-label="下一张">›</button>
           <div class="progress"><div class="bar" id="carouselProgress"></div></div>
           <div class="caption" id="carouselCaption">点击图片显示说明</div>
         </div>
-      </section>
+      </section> -->
 
       <!-- 多图对比模板（原图 vs 多版本） -->
-      <section id="gallery-compare" class="section container reveal">
+      <!-- <section id="gallery-compare" class="section container reveal">
         <div class="section-head">
           <h2>Gallery · Compare</h2>
           <p>选择版本后，通过滑块在原图与编辑图之间拖动分割线。</p>
@@ -153,14 +155,20 @@
             <input type="range" class="js-slider" min="0" max="100" value="50" aria-label="对比滑块" />
           </div>
         </div>
+      </section> -->
+
+      <!-- Experiments -->
+      <section id="experiment-results" class="section container reveal">
+        <h2>Experiments</h2>
+        <p>在多模态理解、检索与编辑等任务上验证方法有效性。下方给出可视化模板。</p>
       </section>
 
       <!-- 视频模块 -->
-      <section id="video" class="section container reveal">
+      <!-- <section id="video" class="section container reveal">
         <h2>Video</h2>
         <div class="video-grid">
           <video class="glass" controls preload="metadata" poster="" id="localVideo">
-            <!-- 用户可替换 source 为真实视频文件 -->
+             用户可替换 source 为真实视频文件 
           </video>
           <div class="glass iframe-wrap">
             <iframe
@@ -173,7 +181,7 @@
             ></iframe>
           </div>
         </div>
-      </section>
+      </section> -->
 
       <footer class="footer container">
         <p>2025 CoMT. Crafted with ❤️ in teal & light-blue.</p>
