@@ -231,7 +231,7 @@ body.redesign .hero-inner {
   position: relative !important;
 }
 body.redesign .hero-inner::before {
-  content: "PAPER · CoVT · 2025";
+  content: "PAPER · COVT · ECCV 2026";
   display: block;
   font-family: var(--font-mono);
   font-size: 12px; letter-spacing: .08em;
@@ -314,6 +314,13 @@ body.redesign .affiliation {
   -webkit-text-fill-color: initial !important;
 }
 body.redesign .affiliation.note { font-style: italic !important; text-transform: none !important; letter-spacing: 0 !important; }
+body.redesign .affiliation.conference-note {
+  margin-top: 8px !important;
+  color: var(--ink) !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+  font-weight: 500 !important;
+}
 
 /* CTAs */
 body.redesign .cta {
@@ -1221,6 +1228,16 @@ body.redesign .footer-icon {
 }
 body.redesign .footer-icon svg { width: 14px; height: 14px; fill: currentColor; }
 body.redesign .footer-icon:hover { background: var(--ink) !important; color: var(--bg) !important; border-color: var(--ink) !important; }
+body.redesign .footer-icon-xiaohongshu {
+  border-color: #ff2442;
+  color: #ff2442 !important;
+}
+body.redesign .xiaohongshu-mark {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  line-height: 1;
+  font-weight: 700;
+}
 
 /* ---- Token popover ----------------------------------------- */
 body.redesign .token-popover {
